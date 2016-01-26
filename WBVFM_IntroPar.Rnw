@@ -1,0 +1,80 @@
+
+
+\documentclass{article}
+\newenvironment{knitrout}{}{}  %just a dummy environment
+\makeatletter
+\newcommand\gobblepars{%
+    \@ifnextchar\par%
+        {\expandafter\gobblepars\@gobble}%
+        {}}
+\makeatother
+
+
+
+\title{A top-down approach to projecting the impacts of development aid on carbon sequestration}
+\begin{document}
+\begin{knitrout}
+<<setup, echo=FALSE>>=
+render_sweave()
+@
+
+<<Libs, include=FALSE>>=
+library(knitcitations)
+library(sp)
+library(maptools, quietly=TRUE)
+@
+
+<<Bib_setup, echo=FALSE>>=
+cleanbib()
+options("citation_format" = "compatibility")
+cite_options(max.names=1)
+@
+
+<<Data_Load, echo=FALSE, cache=TRUE>>=
+#Read in the results from the carbon GWR model
+#Generated from script 
+carbon_data_path = "/home/aid_data/Desktop/GitRepo/WBVFMNCC/data/carbon_cartodb.csv"
+cdb <- read.csv(carbon_data_path)
+
+##Bind the latitude and longitude for the SPDF
+coords = c(cdb["longitude"],cdb["latitude"])
+
+##Create a spatial points data frame
+spdf_LL <- SpatialPointsDataFrame(coords, cdb)
+
+#read in Natural Earth country boundaries
+countryBounds <- "/home/aid_data/Desktop/GitRepo/WBVFMNCC/data/ne_10m_admin_0_countries.shp"
+cBnd <- readShapePoly(countryBounds)
+
+#Verification - comment unless needed.
+#plot(cBnd)
+#points(spdf_LL, col="red", pch=19,cex=.05)
+
+@
+  Since 1945, over \$4.9 trillion dollars of international aid has been allocated \Sexpr{citep("10.1016/j.worlddev.2011.07.029")}.
+ To date there have been no estimates of the geographically varying impact of this aid on the carbon cycle. \gobblepars
+<<Proj_count, echo=FALSE>>=
+proj_count <- formatC(length(cdb[[1]]), format="d", big.mark=',')
+@
+We apply a geographically weighted matching method \Sexpr{citep("10.1073/pnas.0800437105")} to estimate the impact of World Bank projects implemented between 2000 and 2011 on sequestered carbon, using a new, double-blind coded dataset of \Sexpr{proj_count} World Bank project locations.\gobblepars
+<<Tonnes, echo=FALSE>>=
+tonnes_sequestered <- formatC(sum(spdf_LL@data$val), format="d", big.mark=',')
+@
+Considering only carbon sequestered due to fluctuations in vegetative biomass caused by World Bank projects, we estimate that these projects have resulted in a net positive increase in sequestration totaling \Sexpr{tonnes_sequestered} tonnes. \gobblepars
+<<CountryBreakdown, echo=FALSE, cache=TRUE>>=
+#Overlay the points with the polygons.  We Cache this as it is very time consuming.
+overlay <- over(spdf_LL, cBnd, returnList=TRUE)
+@
+
+
+
+%\Sexpr{bibliography(style="nature")}
+
+
+%Summary Paragraph
+%WB Global IE
+%Runfola, Ben'Yishay, Tanner, Buchanan, Nagol
+%Goodman, Trichler, Marty
+%Acknowledge: Stewart, Kappel, Lu, Nicholson, Vijayan, Walter, Hild, Leu
+\end{knitrout}
+\end{document}
