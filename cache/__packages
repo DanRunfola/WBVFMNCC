@@ -3,3 +3,7 @@ knitr
 knitcitations
 sp
 maptools
+survival
+doBy
+ggplot2
+gridExtra
