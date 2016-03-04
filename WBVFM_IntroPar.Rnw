@@ -1,9 +1,11 @@
 
 %sudo apt-get install texlive-bibtex-extra
+%Word counts: pdftotext WBVFM_IntroPar.pdf - | wc -w
 \documentclass{article}
 \usepackage{float}
 \usepackage{wrapfig}
 \usepackage{hyperref}
+\usepackage{authblk}
 \usepackage[backend=bibtex, style=nature, citestyle=authoryear]{biblatex}
 \bibliography{WBVFM_IntroPar}
 \newenvironment{knitrout}{}{}  %just a dummy environment
@@ -16,95 +18,73 @@
 
 
 
-\title{A top-down approach to projecting the impacts of development aid on vegetative carbon sequestration}
+\author[1]{Daniel Runfola\thanks{dsmillerrunfol@wm.edu}}
+\author[1]{Ariel BenYishay\thanks{abenyishay@wm.edu}}
+\author[2]{Jeff Tanner\thanks{jtanner@worldbank.org}}
+\author[3]{Graeme Buchanan\thanks{graeme.buchanan@rspb.org.uk}}
+\author[4]{Jyothy Nagol\thanks{jnagol@umd.edu}}
+\author[5]{Matthias Leu\thanks{mleu@wm.edu}}
+\author[1]{Seth Goodman \thanks{smgoodman@wm.edu}}
+\author[1]{Rachel Trichler\thanks{rbtrichler@wm.edu}}
+\author[1]{Rob Marty\thanks{ramarty@email.wm.edu}}
+
+\affil[1]{Institute for the Theory and Practice of International Relations, The College of William and Mary}
+\affil[2]{Independent Evaluation Group, World Bank}
+\affil[3]{Center for Conservation Science, Royal Society of Birds}
+\affil[4]{Global Land Cover Facility, University of Maryland}
+\affil[5]{Department of Biology, The College of William and Mary}
+
+\renewcommand\Authands{ and }
+
+\title{A top-down approach to estimating spatially hetereogeneous impacts of development aid on vegetative carbon sequestration}
+\date{\vspace{-5ex}}
 \begin{document}
 \begin{knitrout}
-<<setup, echo=FALSE>>=
-setwd('/home/aid_data/Desktop/GitRepo/WBVFMNCC')
+<<setup, echo=FALSE, include=FALSE>>=
 Sys.setenv(TEXTINPUTS=getwd(),
            BIBINPUTS=getwd(),
            BSTINPUTS=getwd())
 render_sweave()
+source("WBVFM_Analysis.R")
 @
 
-\maketitle
+\maketitle 
+\begin{flushleft}
+\textbf{Short Title}: Estimating impacts of aid on carbon sequestration\\
+\textbf{Keywords}: International Aid, Carbon Sequestration, Causal Identification, Heterogeneous Effects\\
+\textbf{Words in Abstract:} 150\\
+\textbf{Words in Manuscript:} 3000\\
+\textbf{Number of References:} 30\\
+\textbf{Number of Figures and Tables:} 10\\
+\textbf{Corresponding Author}:\\
+Dr. Daniel Runfola\\
+Institute for the Theory and Practice of International Relations, \emph{AidData}
+Email: dsmillerrunfol@wm.edu
+Telephone: 508.316.9109
+Fax: 757.221.4650
+\end{flushleft}
 
-<<Libs, include=FALSE>>=
-library(sp)
-library(maptools, quietly=TRUE)
-library(doBy)
-library(ggplot2)
-library(gridExtra)
-@
+\newpage
+\section{Abstract}
+  Since 1945, over \$4.9 trillion dollars of international aid has been allocated (\cite{tierney_more_2011}).
+ To date there have been no estimates of the regional impact of this aid on the carbon cycle.  
+ We apply a geographically explicit matching method (\cite{andam_measuring_2008}) to estimate the impact of World Bank projects implemented between 2000 and 2010 on sequestered carbon, using a novel and publically available dataset of \Sexpr{proj_count} World Bank project locations \footnote{http://aiddata.org/level1/geocoded/worldbank}. 
+ Considering only carbon sequestered due to fluctuations in vegetative biomass caused by World Bank projects, we estimate a global net positive increase in sequestration totaling \Sexpr{tonnes_sequestered} tonnes. 
+However, we illustrate the apparent effectiveness of environmental safeguards (\cite{laurance_reducing_2015}) implemented by the World Bank are variable across different geographic contexts.  
+We argue that subnational data can be helpful in the identification of these heterogeneous impact effects, and highlight the considerable methodologic barriers which still exist.
 
-<<Data_Load, echo=FALSE, cache=TRUE>>=
-#Read in the results from the carbon GWR model
-#Generated from script 
-carbon_data_path = "/home/aid_data/Desktop/GitRepo/WBVFMNCC/data/carbon_cartodb.csv"
-cdb <- read.csv(carbon_data_path)
-
-##Bind the latitude and longitude for the SPDF
-coords = c(cdb["longitude"],cdb["latitude"])
-
-##Create a spatial points data frame
-spdf_LL <- SpatialPointsDataFrame(coords, cdb)
-
-#read in Natural Earth country boundaries
-countryBounds <- "/home/aid_data/Desktop/GitRepo/WBVFMNCC/data/ne_10m_admin_0_countries.shp"
-cBnd <- readShapePoly(countryBounds)
-
-#Verification - comment unless needed.
-#plot(cBnd)
-#points(spdf_LL, col="red", pch=19,cex=.05)
-
-@
-<<CountryBreakdown, echo=FALSE, cache=TRUE, include=FALSE>>=
-#Overlay the points with the polygons.  We Cache this as it is very time consuming.
-overlay <- over(spdf_LL, cBnd[,"REGION_WB"])
-spdf_LL$REGION_WB <- overlay$REGION_WB
-
-#Just keep the columns we need for the chart
-fig_df <- spdf_LL@data[c("REGION_WB","val","start_actual_isodate")]
-fig_df$count <- 1
-figSum <- summaryBy(val + count ~ REGION_WB + start_actual_isodate, data=fig_df, FUN=sum)
-#Remove project locations which did not fall into a country for this figure
-figSum_noNA <- figSum[!is.na(figSum["REGION_WB"]),]
-
-figSum_noNA$avgProjVal <- figSum_noNA$val.sum / figSum_noNA$count.sum
-
-text_size_for_figs = 11
-
-Avg_Proj <- ggplot(data=figSum_noNA, aes(x=start_actual_isodate, y=avgProjVal, group=REGION_WB, colour=factor(REGION_WB))) +
-  geom_line(size=.5, linetype=3) +
-  theme(axis.text.x=element_text(angle=90, hjust=1)) +
-  stat_smooth(se=FALSE, method="loess") +
-  geom_point()+
-  labs(x="Project Start Year", y="Average Location Sequestration (Tonnes)") +
-  theme_bw() +
-  theme(legend.position="none", text=element_text(size=text_size_for_figs))
-
-Total_Proj <- ggplot(data=figSum_noNA, aes(x=start_actual_isodate, y=val.sum, group=REGION_WB, colour=factor(REGION_WB), name="Region")) +
-  geom_line(size=.5, linetype=3) +
-  theme(axis.text.x=element_text(angle=90, hjust=1)) +
-  stat_smooth(se=FALSE, method="loess") +
-  geom_point()+
-  labs(x="Project Start Year", y="Total Tonnes of Sequestered Carbon Attributable to World Bank Projects")+
-  guides(color=guide_legend(title="Region")) +
-  theme_bw()+
-  theme(legend.position = c(0,1), legend.justification = c(0, 1), legend.key.size = unit(0.2,"cm"), legend.background=element_rect(fill=alpha('white', 0.1)), text=element_text(size=text_size_for_figs)) 
-
-Count_Proj <- ggplot(data=figSum_noNA, aes(x=start_actual_isodate, y=count.sum, group=REGION_WB, colour=factor(REGION_WB), name="Region")) +
-  geom_line(size=.5, linetype=3) +
-  theme(axis.text.x=element_text(angle=90, hjust=1)) +
-  stat_smooth(se=FALSE, method="loess") +
-  geom_point()+
-  labs(x="Project Start Year", y="Total Project Locations")+
-  guides(color=guide_legend(title="Region")) +
-  theme_bw() +
-  theme(legend.position="none", text=element_text(size=text_size_for_figs))
+\newpage
+\section{Introduction}
 
 
-@
+
+The Introduction should summarize briefly the background and aims, and end with a brief statement of what has been achieved by the work.
+
+\section{Methods}
+This section should contain sufficient detail so that all procedures can be repeated (in conjunction with cited references). Where specific equipment and materials are named, the manufacturer’s name, city and country should be given (generally in parentheses after first mention).
+
+\section{Results}
+The Results section should present the experiments that support the conclusions to be drawn later in the Discussion. The Results section should conform to a high standard of rigour. Extended lines of inference, arguments or speculations should not be placed in the Results.
 
 \begin{wrapfigure}[20]{r}{0.65\textwidth}\centering
 %\begin{minipage}{.75\textwidth}
@@ -114,31 +94,21 @@ grid.arrange(Total_Proj, Count_Proj, Avg_Proj, ncol=2, layout_matrix = cbind(c(1
 %\end{minipage}
 \end{wrapfigure}  
 
+\section{Discussion}
+The Discussion section should be separate from the Results section. It allows authors to propose their interpretation of the results, and to suggest what they mean in a wider context. It should end with a clear statement of the main conclusions of the research, and a clear explanation of their importance and relevance to applied conservation and/or policy.
 
-  Since 1945, over \$4.9 trillion dollars of international aid has been allocated (\cite{tierney_more_2011}).
- To date there have been no estimates of the regional impact of this aid on the carbon cycle. \gobblepars
-<<Proj_count, echo=FALSE>>=
-proj_count <- formatC(length(cdb[[1]]), format="d", big.mark=',')
-@
-We apply a geographically weighted matching method (\cite{andam_measuring_2008}) to estimate the impact of World Bank projects implemented between 2000 and 2010 on sequestered carbon, using a novel, publically available double-blind coded dataset of \Sexpr{proj_count} World Bank project locations \footnote{http://aiddata.org/level1/geocoded/worldbank}. \gobblepars
-<<Tonnes, echo=FALSE>>=
-tonnes_sequestered <- formatC(sum(spdf_LL@data$val), format="d", big.mark=',')
-@
-Considering only carbon sequestered due to fluctuations in vegetative biomass caused by World Bank projects, we conservatively estimate a global net positive increase in sequestration totaling \Sexpr{tonnes_sequestered} tonnes. 
-Despite uncertainty in the global vegetative carbon stocks and flows (\cite{coulston_complex_2015}), we provide evidence of the success of environmental safeguards (\cite{laurance_reducing_2015}) implemented by the Bank in most regions over the last decade, and are able to highlight "bright spots" in time periods and regions which contained projects that enabled higher levels of carbon sequestration. 
-In view of these analyses, we argue that subnational, geo-referenced data on the location of development finance and aid contains decision-relevant information for environmental policy.
-
-
+\section{Acknowledgements}
+The authors would like to acknowledge the government of Sweden and the World Bank Independent Evaluation Group for partially funding this research.  This work was performed in part using computational facilities at the College of William and Mary which were provided with the assistance of the National Science Foundation, Virginia Port Authority, Virginia's Commonwealth Technology Research Fund, and the Office of Naval Research.  The authors would also like to thank Scott Stewart, Alex Kappel, Miranda Lv, Doug Nicholson, and Vinay Vijayan for their valuable contributions and insights.
 
 
 \newpage
+\section{References}
+%Need to ensure formatting is correct -
+%http://endnote.com/downloads/style/conservation-letters
+%Limited to 40 references
 \printbibliography
 
 
-%Summary Paragraph
-%WB Global IE
-%Runfola, Ben'Yishay, Tanner, Buchanan, Nagol
-%Goodman, Trichler, Marty
-%Acknowledge: Stewart, Kappel, Lu, Nicholson, Vijayan, Walter, Hild, Leu
+
 \end{knitrout}
 \end{document}

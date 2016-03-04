@@ -1,0 +1,64 @@
+library(sp)
+library(maptools, quietly=TRUE)
+library(doBy)
+library(ggplot2)
+library(gridExtra)
+
+carbon_data_path = "/home/aiddata/Desktop/Github/WBVFMNCC/data/carbon_cartodb.csv"
+cdb <- read.csv(carbon_data_path)
+
+##Bind the latitude and longitude for the SPDF
+coords = c(cdb["longitude"],cdb["latitude"])
+
+##Create a spatial points data frame
+spdf_LL <- SpatialPointsDataFrame(coords, cdb)
+
+#read in Natural Earth country boundaries
+countryBounds <- "/home/aiddata/Desktop/Github/WBVFMNCC/data/ne_10m_admin_0_countries.shp"
+cBnd <- readShapePoly(countryBounds)
+
+overlay <- over(spdf_LL, cBnd[,"REGION_WB"])
+spdf_LL$REGION_WB <- overlay$REGION_WB
+
+#Just keep the columns we need for the chart
+fig_df <- spdf_LL@data[c("REGION_WB","val","start_actual_isodate")]
+fig_df$count <- 1
+figSum <- summaryBy(val + count ~ REGION_WB + start_actual_isodate, data=fig_df, FUN=sum)
+#Remove project locations which did not fall into a country for this figure
+figSum_noNA <- figSum[!is.na(figSum["REGION_WB"]),]
+
+figSum_noNA$avgProjVal <- figSum_noNA$val.sum / figSum_noNA$count.sum
+
+text_size_for_figs = 11
+
+Avg_Proj <- ggplot(data=figSum_noNA, aes(x=start_actual_isodate, y=avgProjVal, group=REGION_WB, colour=factor(REGION_WB))) +
+  geom_line(size=.5, linetype=3) +
+  theme(axis.text.x=element_text(angle=90, hjust=1)) +
+  stat_smooth(se=FALSE, method="loess") +
+  geom_point()+
+  labs(x="Project Start Year", y="Average Location Sequestration (Tonnes)") +
+  theme_bw() +
+  theme(legend.position="none", text=element_text(size=text_size_for_figs))
+
+Total_Proj <- ggplot(data=figSum_noNA, aes(x=start_actual_isodate, y=val.sum, group=REGION_WB, colour=factor(REGION_WB), name="Region")) +
+  geom_line(size=.5, linetype=3) +
+  theme(axis.text.x=element_text(angle=90, hjust=1)) +
+  stat_smooth(se=FALSE, method="loess") +
+  geom_point()+
+  labs(x="Project Start Year", y="Total Tonnes of Sequestered Carbon Attributable to World Bank Projects")+
+  guides(color=guide_legend(title="Region")) +
+  theme_bw()+
+  theme(legend.position = c(0,1), legend.justification = c(0, 1), legend.key.size = unit(0.2,"cm"), legend.background=element_rect(fill=alpha('white', 0.1)), text=element_text(size=text_size_for_figs)) 
+
+Count_Proj <- ggplot(data=figSum_noNA, aes(x=start_actual_isodate, y=count.sum, group=REGION_WB, colour=factor(REGION_WB), name="Region")) +
+  geom_line(size=.5, linetype=3) +
+  theme(axis.text.x=element_text(angle=90, hjust=1)) +
+  stat_smooth(se=FALSE, method="loess") +
+  geom_point()+
+  labs(x="Project Start Year", y="Total Project Locations")+
+  guides(color=guide_legend(title="Region")) +
+  theme_bw() +
+  theme(legend.position="none", text=element_text(size=text_size_for_figs))
+
+proj_count <- formatC(length(cdb[[1]]), format="d", big.mark=',')
+tonnes_sequestered <- formatC(sum(spdf_LL@data$val), format="d", big.mark=',')
