@@ -3,6 +3,7 @@ library(maptools, quietly=TRUE)
 library(doBy)
 library(ggplot2)
 library(gridExtra)
+library(maps)
 
 carbon_data_path = "/home/aiddata/Desktop/Github/WBVFMNCC/data/carbon_cartodb.csv"
 cdb <- read.csv(carbon_data_path)
@@ -21,6 +22,15 @@ overlay <- over(spdf_LL, cBnd[,"REGION_WB"])
 spdf_LL$REGION_WB <- overlay$REGION_WB
 
 #Just keep the columns we need for the chart
+uni_spdf_LL <- spdf_LL[unique(spdf_LL$project_location_id),]
+
+
+fig_df_uni <- uni_spdf_LL@data[c("REGION_WB","val","start_actual_isodate")]
+fig_df_uni$count <- 1
+figSum_uni <- summaryBy(val + count ~ REGION_WB + start_actual_isodate, data=fig_df_uni, FUN=sum)
+#Remove project locations which did not fall into a country for this figure
+figSum_uni_noNA <- figSum_uni[!is.na(figSum_uni["REGION_WB"]),]
+
 fig_df <- spdf_LL@data[c("REGION_WB","val","start_actual_isodate")]
 fig_df$count <- 1
 figSum <- summaryBy(val + count ~ REGION_WB + start_actual_isodate, data=fig_df, FUN=sum)
@@ -50,7 +60,7 @@ Total_Proj <- ggplot(data=figSum_noNA, aes(x=start_actual_isodate, y=val.sum, gr
   theme_bw()+
   theme(legend.position = c(0,1), legend.justification = c(0, 1), legend.key.size = unit(0.2,"cm"), legend.background=element_rect(fill=alpha('white', 0.1)), text=element_text(size=text_size_for_figs)) 
 
-Count_Proj <- ggplot(data=figSum_noNA, aes(x=start_actual_isodate, y=count.sum, group=REGION_WB, colour=factor(REGION_WB), name="Region")) +
+Count_Proj <- ggplot(data=figSum_uni_noNA, aes(x=start_actual_isodate, y=count.sum, group=REGION_WB, colour=factor(REGION_WB), name="Region")) +
   geom_line(size=.5, linetype=3) +
   theme(axis.text.x=element_text(angle=90, hjust=1)) +
   stat_smooth(se=FALSE, method="loess") +
@@ -60,5 +70,11 @@ Count_Proj <- ggplot(data=figSum_noNA, aes(x=start_actual_isodate, y=count.sum, 
   theme_bw() +
   theme(legend.position="none", text=element_text(size=text_size_for_figs))
 
-proj_count <- formatC(length(cdb[[1]]), format="d", big.mark=',')
+proj_count <- as.character(41307)
+proj_est_count <- length(unique(cdb$project_location_id))
+
 tonnes_sequestered <- formatC(sum(spdf_LL@data$val), format="d", big.mark=',')
+
+png('result_disag.jpg')
+grid.arrange(Total_Proj, Count_Proj, Avg_Proj, ncol=2, layout_matrix = cbind(c(1,1),c(2,3)))
+dev.off()
