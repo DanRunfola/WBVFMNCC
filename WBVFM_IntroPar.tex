@@ -94,7 +94,7 @@ We argue that sub-national data can help identify geographically heterogeneous i
 
 International recognition of the dual challenges of international development and the mitigation of environmental change is resulting in a large redirection of resources towards developing countries. 
 The United States alone has pledged nearly \$4 billion dollars of aid to mitigate climate vulnerability over the next 4 years, and the Paris convention urged donors to target \$100 billion annually by the year 2020 (\cite{royal_united_2015}). 
-Coupled with increasing pressure from recipient nations, donors have and continue to introduce more stringent environmental safeguards, including requirements for compliance with national and international regulations, environmental management plans, reforestation goals, and others (\cite{nielson_delegation_2003}, \cite{gutner_explaining_2005}).
+Coupled with increasing pressure from recipient nations, donors have and continue to introduce more stringent environmental safeguards on development projects of all types, including requirements for compliance with national and international regulations, environmental management plans, reforestation goals, and others (\cite{nielson_delegation_2003}, \cite{gutner_explaining_2005}).
 
 \begin{wrapfigure}[17]{r}{0.65\textwidth}\centering
 \begin{Schunk}
@@ -144,7 +144,8 @@ Ecofloristic Zone Carbon Fractions & Oak Ridge National Laboratory (\cite{ruesch
 \par
 
 We find that while the overall impact of large scale World Bank projects on carbon sequestration appears to be positive, considerable temporal and spatial variation exists in these impacts.
-Further, we illustrate the advantages and limitations of a geographically explicit approach to estimating the causal effects of development aid projects, and outline a number of topics for further research.
+We illustrate the advantages and limitations of a geographically explicit approach to estimating the causal effects of development aid projects, and outline a number of topics for further research.
+Specifically, we discuss the need for hard assumptions of model independence in geographically explicit models to enable causal estimates, the concomitant limitations in interpretation this necessitates, and possible pathways forward to overcome this critical limitation.
 Finally, we introduce an enhanced, publicly available data set of the global, spatially-explicit distribution of World Bank activities encompassing projects initiated between 1995 and 2014.
 
 \newpage
@@ -179,13 +180,13 @@ In this application, the weights matrix is specified according to the bin (\text
 \par
 Once calculated, the distance at which Moran's I is equal to or less than .10 is identified, and used to parameterize a buffer around each project. 
 The projects are then subdivided into six different project (sector) types - Health, Environment, Education, Industrial, Infrastructure, and Other.  
-Within each of these sectors, projects are further subdivided into three equally-sized monetary bins of "low", "medium", and "high" dollars committed to the project.
+Within each of these sectors, projects are further subdivided into three equally-sized monetary bins of ``low", ``medium", and ``high" dollars committed to the project.
 
 \par
 
 Finally, for each high dollar value group-sector combination (6 total groups), a geographically explicit propensity score model is fit.  
 This is conducted following a three-stage process which is repeated for every large scale World Bank project, resulting in 13769 total models.
-In the first stage, a unit of observation is selected and all World Bank projects that fall within the distance estimated according to the Moran's I are selected as the relevant ``subpopulation'' for that point.
+In the first stage, a large scale World Bank project location is selected and all World Bank projects that fall within the distance estimated according to the Moran's I are selected as the relevant ``subpopulation'' for that point.
 All points within the subpopulation are defined as treated or untreated pending their monetary value - units of observation with a high dollar value (in the upper 33\% for a given sector) are assigned as treated (1), while all projects in the medium and low bins (in the lower 66\% for a sector) are assigned an untreated value (0).
 
 \par
@@ -194,13 +195,13 @@ Variables matched on can be seen in Table 1, and matches are limited to be withi
 The propensity scores are calculated once globally following a logit model:
 
 \begin{equation}
-T_{i} = \beta_{0} + \sum_{k=1}^{k}(\beta_{k}*x_{i,k})
+T = \beta_{0} + \sum_{k=1}^{k}(\beta_{k}*x_{k})
 \label{EQpropensity}
 \end{equation}
 
-where \textit{T} is the treatment binary, \textit{i} is the unit of analysis, and \begin{math}\beta_{k}\end{math} are the estimated coefficients for each covariate, \begin{math}x_{k}\end{math}.  
+where \textit{T} is the treatment binary, and \begin{math}\beta_{k}\end{math} are the estimated coefficients for each covariate, \begin{math}x_{k}\end{math}.  
 
-The estimates from this equation are applied to each unit of observation within the subpopulation, and the differences between propensity scores across different units of observation are used to represent a univariate measure of similarity.  
+The estimates from this equation are applied to each unit of observation within the subpopulation, and the differences between propensity scores across different units of observation are used to represent a univariate measure of similarity (extensive discussions of propensity score matching and it's application can be found in \cite{rubin_estimating_1997} and \cite{abbay_does_2015}).  
 For the set of high dollar value project locations within the area of influence, the optimal set of matched untreated units (without replacement) are identified using a nearest-neighbor optimization (\cite{ho_matchit:_2011}). 
 This results in a dataset in which each treated unit is matched with the single control unit most similar to it, with units that have no meaningful comparison dropped from the analysis.
 \par
@@ -212,7 +213,7 @@ y_i = \beta_{0} + \theta * T + \sum_{k=1}^{k}(\beta_{k}*x_{k}) + D_{p}
 \label{EQgwr}
 \end{equation}
 
-where \begin{math}y_{i}\end{math} represents the level of forest cover within each zone \textit{i}, \begin{math}\theta\end{math} represents the estimated impact of the treatment, and \begin{math}D_{p}\end{math} represent fixed effects for each paired observation.
+where \begin{math}y_{i}\end{math} represents the level of forest cover within each zone \textit{i}, \begin{math}\theta\end{math} represents the estimated impact of the treatment, and \begin{math}D_{p}\end{math} represent fixed effect for each paired observation.
 Every unit of observation \textit{n} has a zone \textit{i}, defined as all projects which fall within the distance calculated using Moran's I.
 
 \par
@@ -222,7 +223,7 @@ In some cases, insufficient matches or eligible cases existed to approximate the
 
 \subsection{Estimating Carbon Sequestration}
 Because the outcome measure examined (NDVI) is only a proxy for carbon, an additional step of modeling must be conducted to translate changes in NDVI into changes in estimated relative tonnes of carbon sequestered.
-To accomplish this, we employ a fixed-effects approach to account for the geographically variable relationship between NDVI and carbon.
+To accomplish this, we employ a fixed-effects approach to account for the geographically variable relationship between NDVI and carbon (a heterogeneous relationship largely driven by different floral regimes across the globe).
 This relies on two datasets: an estimate of global vegetative carbon stocks representing the year circa 2000 (\cite{saatchi_benchmark_2011}), and ecofloristic zone information representing key geographic divisions of flora relevant for carbon (\cite{ruesch_new_2008}).
 Using this information in conjunction with LTDR NDVI from 2000, a fixed effect model is fit:
 
@@ -264,7 +265,7 @@ A caliper of .25 is used to exclude poor matches, and after matching if a suffic
 \end{wrapfigure}  
 
 After matching is conducted for each subpopulation, a regression is performed for that subpopulation following eq.\ref{EQgwr}.  
-This results in 8399 projects which have adequate matches for estimation, or 61\% of all large scale projects. 
+This results in 8399 locations which have adequate matches for estimation, or 61\% of all large scale projects' locations. 
 For each of these models, we record all relevant information regarding standard errors and estimated coefficients, and provide an interface for users to examine these values across all models\footnote{A fully interactive online tool to explore results is available, but is omitted from this submission to facilitate blind peer review.}.  
 The impacts estimated for each of these project locations (\begin{math}\theta\end{math} in eq. \ref{EQgwr}) are entered in to the fixed-effect model derived following eq. \ref{EQcarb} (a total of 60 fixed effects estimates are derived in this model, representing all ecofloristic zones which contained World Bank projects).
 This provides a regionally-specific estimate of the tonnes of carbon sequestered attributable to a World Bank project.
@@ -281,33 +282,33 @@ This approach has the benefit of contrasting World Bank project locations to oth
 Further, by leveraging the geographic context in which projects exist, this approach has the potential to improve matches by providing pairs which are contextually similar - i.e., projects in dense forests are compared to other projects in dense forests; those near urban areas and contrasted to others near urban areas.
 Both of these attributes help to mitigate concerns over omitted variable biases, though come with drawbacks noted below.
 Lastly, by leveraging the geographically-explicit approach detailed here, each project location receives an estimated impact.
-While interaction terms can provide some insights into heterogeneous effects, the geographic limitations on subpopulations provide unique insights into trends that may vary over space.
+Thus, the geographic subpopulations generated in this approach provide unique insights into trends that may vary over space.
 \par
 Many opportunities exist to advance research which seeks to incorporate geographic data into models which causally identify impacts.
 First and foremost are the well known disadvantages to geographically weighted regression (GWR) approaches - namely spatial correlation in estimated coefficients, bias in standard error terms (\cite{wheeler_multicollinearity_2005}), and the necessity to define a weights matrix (i.e., in this piece we choose a Moran's I threshold of 0.1 to approximate a single threshold).  
-These factors limit the interpretation of the estimates calculated in this paper, specifically preventing insights into the overall significant or treatment impact across multiple locations - i.e., individual estimates can be interpreted, but aggregate estimates which rely on statistical significance can be misleading.
+These factors limit the interpretation of the estimates calculated in this paper, specifically preventing insights into the overall significance of treatment impacts across multiple locations - i.e., individual estimates can be interpreted if the hard assumption of independence is made, but aggregate estimates which rely on statistical significance can be misleading.
 Ongoing research is examining potential solutions to this problem - for example, leveraging the techniques of Seemingly Unrelated Regression (SURE) or the emergent causal machine learning approaches (see \cite{athey_recursive_2015}), but much of this research is currently nascent - and solutions appear to be extremely computationally intensive.
 \par
 A second limitation of this approach is in the matching strategy employed.
-Because we chose to contrast high-dollar value World Bank projects to low-dollar value World Bank projects within the same sector, we have a higher degree of confidence in a reduced omission bias - i.e., it is more likely we're comparing "apples to apples".
+Because we chose to contrast high-dollar value World Bank projects to low-dollar value World Bank projects within the same sector, we have a higher degree of confidence in a reduced omission bias - i.e., it is more likely we're comparing  ``apples to apples".
 However, this also significantly limited the number of adequate matches which could be found, leading to a lack of estimates for approximately 40\% of project locations.
 This is representative of a broader concern of any top-down approaches to impact evaluation, as there is frequently limited information on the characteristics of the project and relevant geographic contextual factors to include.
-Ongoing research into key characteristics of projects (i.e., beyond the number of dollars allocated and sectoral grouping) seeks to mitigate these concerns, and provide increasingly better matches when top-down strategies are pursued.
+Ongoing research into key characteristics of projects (i.e., beyond the number of dollars allocated and sectoral grouping, and including factors such as spatial correlation amongst covariates) seeks to mitigate these concerns, and provide increasingly better matches when top-down strategies are pursued.
 \par
 Despite these limitations, we believe this approach provides policymakers with a cost-effective approach to rapidly assessing a very large portfolio of projects to identify "warning flags" or "bright spots".  
 We do not suggest that such analyses take the place of traditional impact evaluation strategies, but rather argue that top-down analyses such as these can help better direct resources for more rigorous, in-situ assessments.
 Further, because we leverage satellite information which is regularly updated, such strategies could be applied not only to project evaluation, but also project monitoring.
 \par
-Following this, we argue that sub-national data can be helpful in the identification of  heterogeneous impact effects. 
-This piece highlights this by examining the impact of large scale World Bank projects on carbon sequestration at a global scale.  
-We find that while projects have had an overall positive effect, significant temporal and geographic variation exists.
+Following this, we argue that sub-national data can be helpful in the identification of geographically heterogeneous impact effects. 
+This piece highlights this by examining the impact of large scale World Bank projects on carbon sequestration at a global scale, using a novel and publicly available data set of World Bank project locations\begin{math}^{1}\end{math}.  
+We find that while these projects have had an overall positive effect, significant temporal and geographic variation exists.
 Finally, we argue for the importance of further research into methods to estimate geographically heterogeneous impacts effects.
 \newpage
 
 \section{Acknowledgements}
 The authors would like to acknowledge the government of Sweden and the World Bank Independent Evaluation Group for partially funding this research.  
 This work was performed in part using computational facilities at the College of William and Mary which were provided with the assistance of the National Science Foundation, Virginia Port Authority, Virginia's Commonwealth Technology Research Fund, and the Office of Naval Research.  
-The authors would also like to thank Scott Stewart, Alex Kappel, Zhonghui Lv, Doug Nicholson, and Vinay Vijayan for their valuable contributions and insights.
+The authors would also like to thank Scott Stewart, Alex Kappel, Zhonghui Lv, Doug Nicholson, Carrie Dolan, and Vinay Vijayan for their valuable contributions and insights.
 
 
 \newpage

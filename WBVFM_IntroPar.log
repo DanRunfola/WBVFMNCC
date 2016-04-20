@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.3)  22 MAR 2016 16:19
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.3)  20 APR 2016 17:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -694,92 +694,93 @@ Overfull \hbox (8.20668pt too wide) in paragraph at lines 116--141
  []
 
 [3 <./figure/WLocs-1.pdf>] [4] [5] [6] [7]
-<pre_avg_NDVI_max_full.png, id=137, 450.68375pt x 366.36874pt>
+<pre_avg_NDVI_max_full.png, id=141, 450.68375pt x 366.36874pt>
 File: pre_avg_NDVI_max_full.png Graphic file (type png)
 
 <use pre_avg_NDVI_max_full.png>
-Package pdftex.def Info: pre_avg_NDVI_max_full.png used on input line 242.
+Package pdftex.def Info: pre_avg_NDVI_max_full.png used on input line 243.
 (pdftex.def)             Requested size: 155.24895pt x 126.20728pt.
 
-<figure/Fig1-1.pdf, id=141, 433.62pt x 361.35pt>
+<figure/Fig1-1.pdf, id=145, 433.62pt x 361.35pt>
 File: figure/Fig1-1.pdf Graphic file (type pdf)
  <use figure/Fig1-1.pdf>
-Package pdftex.def Info: figure/Fig1-1.pdf used on input line 260.
+Package pdftex.def Info: figure/Fig1-1.pdf used on input line 261.
 (pdftex.def)             Requested size: 258.75pt x 215.63724pt.
 
-Underfull \hbox (badness 2538) in paragraph at lines 266--272
+Underfull \hbox (badness 2538) in paragraph at lines 267--273
 [][]\T1/aer/m/n/10 After match-
  []
 
 
-Overfull \hbox (3.981pt too wide) in paragraph at lines 266--272
+Overfull \hbox (3.981pt too wide) in paragraph at lines 267--273
 \T1/aer/m/n/10 es-ti-ma-tion, or 61%
  []
 
 
-Underfull \hbox (badness 6157) in paragraph at lines 266--272
-\T1/aer/m/n/10 projects. For
+Overfull \hbox (4.88852pt too wide) in paragraph at lines 267--273
+\T1/aer/m/n/10 projects' lo-ca-tions.
  []
 
 
-Overfull \hbox (2.34909pt too wide) in paragraph at lines 266--272
-\T1/aer/m/n/10 each of these mod-
+Overfull \hbox (0.12103pt too wide) in paragraph at lines 267--273
+\T1/aer/m/n/10 mod-els, we record
  []
 
 
-Overfull \hbox (8.21884pt too wide) in paragraph at lines 266--272
-\T1/aer/m/n/10 tion re-gard-ing stan-
+Underfull \hbox (badness 5939) in paragraph at lines 267--273
+\T1/aer/m/n/10 all rel-e-vant in-
  []
 
 
-Underfull \hbox (badness 1596) in paragraph at lines 266--272
-\T1/aer/m/n/10 dard er-rors and
+Overfull \hbox (3.2789pt too wide) in paragraph at lines 267--273
+\T1/aer/m/n/10 rors and es-ti-mated
  []
 
 
-Underfull \hbox (badness 2538) in paragraph at lines 266--272
-\T1/aer/m/n/10 es-ti-mated co-ef-fi-
- []
-
-
-Underfull \hbox (badness 1048) in paragraph at lines 266--272
-\T1/aer/m/n/10 cients, and pro-
+Underfull \hbox (badness 3547) in paragraph at lines 267--273
+\T1/aer/m/n/10 co-ef-fi-cients, and
  []
 
 [8 <./pre_avg_NDVI_max_full.png> <./figure/Fig1-1.pdf>] [9] [10] [11] [12]
-Overfull \hbox (4.42136pt too wide) in paragraph at lines 318--318
+Overfull \hbox (4.42136pt too wide) in paragraph at lines 319--319
 []\T1/aer/m/n/10 Gutner, T. Ex-plain-ing the Gaps be-tween Man-date and Per-for
 -mance: Agency
  []
 
 
-Overfull \hbox (5.86768pt too wide) in paragraph at lines 318--318
+Overfull \hbox (5.86768pt too wide) in paragraph at lines 319--319
 []\T1/aer/m/n/10 Royal, S. \T1/aer/m/it/10 United Na-tions Frame-work Con-ven-t
 ion on Cli-mate Change ADOP-
  []
 
+
+Overfull \hbox (2.55223pt too wide) in paragraph at lines 319--319
+[]\T1/aer/m/n/10 Rubin, D. B. Es-ti-mat-ing Causal Ef-fects from Large Data Set
+s Us-ing Propen-
+ []
+
 [13]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 322.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 323.
  [14]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 322.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 323.
  (./WBVFM_IntroPar.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 322.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 322.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 323.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 323.
 Package rerunfilecheck Info: File `WBVFM_IntroPar.out' has not changed.
 (rerunfilecheck)             Checksum: 6E4D06FC99F744DE9EFA535861849E2F;430.
 Package logreq Info: Writing requests to 'WBVFM_IntroPar.run.xml'.
 \openout1 = `WBVFM_IntroPar.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 322.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 323.
  ) 
 Here is how much of TeX's memory you used:
- 11704 strings out of 494985
- 185405 string characters out of 6180357
- 371551 words of memory out of 5000000
- 14669 multiletter control sequences out of 15000+600000
+ 11721 strings out of 494985
+ 185883 string characters out of 6180357
+ 374245 words of memory out of 5000000
+ 14684 multiletter control sequences out of 15000+600000
  37131 words of font info for 72 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 40i,16n,54p,918b,1106s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 40i,16n,54p,918b,1180s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/tex
@@ -796,10 +797,10 @@ share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on WBVFM_IntroPar.pdf (14 pages, 1800671 bytes).
+Output written on WBVFM_IntroPar.pdf (14 pages, 1802264 bytes).
 PDF statistics:
- 274 PDF objects out of 1000 (max. 8388607)
- 232 compressed objects within 3 object streams
- 55 named destinations out of 1000 (max. 500000)
+ 278 PDF objects out of 1000 (max. 8388607)
+ 236 compressed objects within 3 object streams
+ 57 named destinations out of 1000 (max. 500000)
  80 words of extra memory for PDF output out of 10000 (max. 10000000)
 
