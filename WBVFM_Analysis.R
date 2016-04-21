@@ -79,13 +79,14 @@ Count_Proj <- ggplot(data=figSum_uni_noNA, aes(x=start_actual_isodate, y=count.s
   theme_bw() +
   theme(legend.position="none", text=element_text(size=text_size_for_figs))
 
-proj_count <- as.character(41307)
+proj_count <- as.character(61243)
+active_proj_count <- as.character(41306)
 proj_est_count <- length(unique(cdb$project_location_id))
 
 high_proj <- cdb[cdb$commitment_group == "high_trtbin",]
 proj_est_count_high <- length(unique(high_proj$project_location_id))
 
-analysis_proj_count <- as.character(41307/3)
+analysis_proj_count <- as.character(19940)
 
 tonnes_sequestered <- formatC(sum(spdf_LL@data$val), format="d", big.mark=',')
 

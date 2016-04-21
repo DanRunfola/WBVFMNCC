@@ -151,7 +151,7 @@ In this section, we detail one approach which enables researchers to measure imp
 
 \subsection{Geographically Explicit Impacts}
 
-First, we truncate the data set to cover World Bank projects from 2000 to 2010 due to limitations of our ancillary information, resulting in a total of \Sexpr{proj_count} World Bank project locations.
+First, we truncate the data set to cover World Bank projects from 2000 to 2010 due to limitations of our ancillary information, resulting in a total of \Sexpr{active_proj_count} World Bank project locations.
 Second, the area of influence within which we anticipate each World Bank project could plausibly have an impact on deforestation is calculated by examining the historic spatial distance at which forest cover is spatially correlated. 
 To parameterize this distance, we calculate a Moran's I (\cite{getis_analysis_1992}) score at increasing distances, a metric that measures the degree of spatial autocorrelation for a given variable.
 We use this metric to estimate the distance at which spatial autocorrelation is no longer predominant for our outcome measure of forest cover, measured in 1999.  
