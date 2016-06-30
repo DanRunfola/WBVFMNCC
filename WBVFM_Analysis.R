@@ -55,7 +55,7 @@ Avg_Proj <- ggplot(data=figSum_noNA, aes(x=start_actual_isodate, y=avgProjVal, g
   theme(axis.text.x=element_text(angle=90, hjust=1)) +
   stat_smooth(se=FALSE, method="loess") +
   geom_point()+
-  labs(x="Project Start Year", y="Average Location Sequestration (Tonnes)") +
+  labs(x="Project Start Year", y="Avg. Location Sequestration (Tonnes)") +
   theme_bw() +
   theme(legend.position="none", text=element_text(size=text_size_for_figs))
 
@@ -64,7 +64,7 @@ Total_Proj <- ggplot(data=figSum_noNA, aes(x=start_actual_isodate, y=val.sum, gr
   theme(axis.text.x=element_text(angle=90, hjust=1)) +
   stat_smooth(se=FALSE, method="loess") +
   geom_point()+
-  labs(x="Project Start Year", y="Total Tonnes of Sequestered Carbon Attributable to World Bank Projects")+
+  labs(x="Project Start Year", y="Total Tonnes of Sequestered Carbon Attributable to World Bank")+
   guides(color=guide_legend(title="Region")) +
   theme_bw()+
   theme(legend.position = c(0,1), legend.justification = c(0, 1), legend.key.size = unit(0.2,"cm"), legend.background=element_rect(fill=alpha('white', 0.1)), text=element_text(size=text_size_for_figs)) 
@@ -81,15 +81,19 @@ Count_Proj <- ggplot(data=figSum_uni_noNA, aes(x=start_actual_isodate, y=count.s
 
 proj_count <- as.character(61243)
 active_proj_count <- as.character(41306)
+pc1_proj_count <- as.character(19940)
+analysis_proj_count <- as.character(19940/3)
+
+
+
 proj_est_count <- length(unique(cdb$project_location_id))
 
 high_proj <- cdb[cdb$commitment_group == "high_trtbin",]
 proj_est_count_high <- length(unique(high_proj$project_location_id))
 
-analysis_proj_count <- as.character(19940)
 
 tonnes_sequestered <- formatC(sum(spdf_LL@data$val), format="d", big.mark=',')
 
-#png('result_disag.jpg')
-#grid.arrange(Total_Proj, Count_Proj, Avg_Proj, ncol=2, layout_matrix = cbind(c(1,1),c(2,3)))
-#dev.off()
+png('result_disag.png')
+grid.arrange(Total_Proj, Count_Proj, Avg_Proj, ncol=2, layout_matrix = cbind(c(1,1),c(2,3)))
+dev.off()

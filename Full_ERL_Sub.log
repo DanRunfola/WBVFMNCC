@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.3)  26 APR 2016 12:39
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.3)  6 MAY 2016 10:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**WBVFM_IntroPar.tex
-(./WBVFM_IntroPar.tex
+**Full_ERL_Sub.tex
+(./Full_ERL_Sub.tex
 LaTeX2e <2011/06/27>
 Babel <3.9h> and hyphenation patterns for 4 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -532,6 +532,9 @@ Package biblatex Info: ... file 'biblatex.cfg' found.
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.cfg
 File: biblatex.cfg 
 )))
+(/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
 (/usr/share/texlive/texmf-dist/tex/latex/upquote/upquote.sty
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
@@ -545,29 +548,30 @@ File: english.lbx 2013/11/25 v2.8a biblatex localization (PK/JW/AB)
 \@quotelevel=\count225
 \@quotereset=\count226
 
-(./WBVFM_IntroPar.aux)
-\openout1 = `WBVFM_IntroPar.aux'.
+(./Full_ERL_Sub.aux)
+\openout1 = `Full_ERL_Sub.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 60.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 60.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 62.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 62.
  (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count227
@@ -597,7 +601,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box31
-Package hyperref Info: Link coloring OFF on input line 60.
+Package hyperref Info: Link coloring OFF on input line 62.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -607,186 +611,265 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count233
 )
-LaTeX Info: Redefining \ref on input line 60.
-LaTeX Info: Redefining \pageref on input line 60.
-LaTeX Info: Redefining \nameref on input line 60.
+LaTeX Info: Redefining \ref on input line 62.
+LaTeX Info: Redefining \pageref on input line 62.
+LaTeX Info: Redefining \nameref on input line 62.
 
-(./WBVFM_IntroPar.out) (./WBVFM_IntroPar.out)
+(./Full_ERL_Sub.out) (./Full_ERL_Sub.out)
 \@outlinefile=\write5
-\openout5 = `WBVFM_IntroPar.out'.
+\openout5 = `Full_ERL_Sub.out'.
 
 Package biblatex Info: No input encoding detected.
 (biblatex)             Assuming 'ascii'.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'ascii'.
-\openout4 = `WBVFM_IntroPar-blx.bib'.
+\openout4 = `Full_ERL_Sub-blx.bib'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'WBVFM_IntroPar.bbl' found.
- (./WBVFM_IntroPar.bbl)
-Package biblatex Info: Reference section=0 on input line 60.
-Package biblatex Info: Reference segment=0 on input line 60.
+Package biblatex Info: ... file 'Full_ERL_Sub.bbl' found.
+ (./Full_ERL_Sub.bbl)
+Package biblatex Info: Reference section=0 on input line 62.
+Package biblatex Info: Reference segment=0 on input line 62.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 65.
+(Font)              <12> on input line 67.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 65.
+(Font)              <8> on input line 67.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 65.
+(Font)              <6> on input line 67.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 65.
+(Font)              <5> on input line 67.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-<figure/WLocs-1.pdf, id=63, 216.81pt x 144.54pt>
-File: figure/WLocs-1.pdf Graphic file (type pdf)
- <use figure/WLocs-1.pdf>
-Package pdftex.def Info: figure/WLocs-1.pdf used on input line 101.
-(pdftex.def)             Requested size: 216.80946pt x 144.54623pt.
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]pdfTeX warning (ext4): dest
+ination with the same identifier (name{page.}) has been already used, duplicate
+ ignored
+<to be read again> 
+                   \relax 
+l.95 \newpage
+              [2]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 111.
+(Font)              <7> on input line 108.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.117 \section
+              {Methods} [3]pdfTeX warning (ext4): destination with the same ide
+ntifier (name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.132 
+       [4]pdfTeX warning (ext4): destination with the same identifier (name{pag
+e.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.155 
+       [5]pdfTeX warning (ext4): destination with the same identifier (name{pag
+e.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.171 \par
+           [6]pdfTeX warning (ext4): destination with the same identifier (name
+{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.193 
+       [7]pdfTeX warning (ext4): destination with the same identifier (name{pag
+e.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.219 
+       [8]pdfTeX warning (ext4): destination with the same identifier (name{pag
+e.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.231 \par
+           [9]pdfTeX warning (ext4): destination with the same identifier (name
+{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.242 \par
+           [10]pdfTeX warning (ext4): destination with the same identifier (nam
+e{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.251 \newpage
+               [11]pdfTeX warning (ext4): destination with the same identifier 
+(name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.251 \newpage
+               [12]pdfTeX warning (ext4): destination with the same identifier 
+(name{page.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.258 \newpage
+               [13]
+LaTeX Font Info:    Try loading font information for T1+aett on input line 262.
 
-Underfull \hbox (badness 3690) in paragraph at lines 109--112
-[][]\T1/aer/m/n/10 Despite these shifts
- []
-
-
-Underfull \hbox (badness 1803) in paragraph at lines 109--112
-\T1/aer/m/n/10 ex-am-ine the im-pact of
- []
-
-
-Underfull \hbox (badness 7203) in paragraph at lines 109--112
-\T1/aer/m/n/10 projects on veg-e-ta-tion
- []
-
-LaTeX Font Info:    Try loading font information for T1+aett on input line 117.
-
-(/usr/share/texlive/texmf-dist/tex/latex/ae/t1aett.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
-Underfull \hbox (badness 1742) in paragraph at lines 123--123
-[]\T1/aer/m/n/10 Gridded Pop-u-la-tion of the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 137--137
-[]\T1/aer/m/n/10 Ecofloristic Zone Car-bon
- []
-
-
-Overfull \hbox (8.20668pt too wide) in paragraph at lines 115--140
-[][] 
- []
-
-[3 <./figure/WLocs-1.pdf>] [4] [5] [6] [7]
-<pre_avg_NDVI_max_full.png, id=143, 450.68375pt x 366.36874pt>
-File: pre_avg_NDVI_max_full.png Graphic file (type png)
-
-<use pre_avg_NDVI_max_full.png>
-Package pdftex.def Info: pre_avg_NDVI_max_full.png used on input line 242.
-(pdftex.def)             Requested size: 155.24895pt x 126.20728pt.
-
-<figure/Fig1-1.pdf, id=147, 433.62pt x 339.2675pt>
-File: figure/Fig1-1.pdf Graphic file (type pdf)
- <use figure/Fig1-1.pdf>
-Package pdftex.def Info: figure/Fig1-1.pdf used on input line 258.
-(pdftex.def)             Requested size: 258.75pt x 202.4594pt.
-
-Underfull \hbox (badness 2538) in paragraph at lines 263--269
-[][]\T1/aer/m/n/10 After match-
- []
-
-
-Overfull \hbox (3.981pt too wide) in paragraph at lines 263--269
-\T1/aer/m/n/10 es-ti-ma-tion, or 47%
- []
-
-
-Overfull \hbox (4.88852pt too wide) in paragraph at lines 263--269
-\T1/aer/m/n/10 projects' lo-ca-tions.
- []
-
-
-Overfull \hbox (0.12103pt too wide) in paragraph at lines 263--269
-\T1/aer/m/n/10 mod-els, we record
- []
-
-
-Underfull \hbox (badness 5939) in paragraph at lines 263--269
-\T1/aer/m/n/10 all rel-e-vant in-
- []
-
-
-Overfull \hbox (3.2789pt too wide) in paragraph at lines 263--269
-\T1/aer/m/n/10 rors and es-ti-mated
- []
-
-
-Overfull \hbox (3.49481pt too wide) in paragraph at lines 263--269
-\T1/aer/m/n/10 co-ef-fi-cients[][][]. The
- []
-
-[8 <./pre_avg_NDVI_max_full.png> <./figure/Fig1-1.pdf>] [9] [10] [11] [12]
-Overfull \hbox (12.4658pt too wide) in paragraph at lines 314--314
+Overfull \hbox (12.4658pt too wide) in paragraph at lines 263--263
 \T1/aer/m/n/10 net-works in re-duc-ing de-for-esta-tion''. en. In: \T1/aer/m/it
 /10 Pro-ceed-ings of the Na-tional Academy
  []
 
 
-Overfull \hbox (1.19096pt too wide) in paragraph at lines 314--314
+Overfull \hbox (1.19096pt too wide) in paragraph at lines 263--263
 \T1/aett/m/n/10 1526380054127727$[]\T1/aer/m/n/10 . \T1/aer/m/sc/10 url\T1/aer/
 m/n/10 : []$\T1/aett/m/n/10 http : / / dx . doi . org / 10 . 1162 / 15263800541
 27727$[]
  []
 
-
-Overfull \hbox (8.40942pt too wide) in paragraph at lines 314--314
-\T1/aer/m/it/10 Change ADOP-TION OF THE PARIS AGREE-MENT. \T1/aer/m/sc/10 url\T
-1/aer/m/n/10 : []$\T1/aett/m/n/10 https : / / unfccc .
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.263 
+       [14]
+Overfull \hbox (9.18748pt too wide) in paragraph at lines 263--263
+[][]\T1/aer/m/n/10 Royal, Sego-lene (2015). \T1/aer/m/it/10 United Na-tions Fra
+me-work Con-ven-tion on Cli-mate Change
  []
 
-[13]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 318.
- [14]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 318.
- (./WBVFM_IntroPar.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 318.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 318.
-Package rerunfilecheck Info: File `WBVFM_IntroPar.out' has not changed.
-(rerunfilecheck)             Checksum: 6E4D06FC99F744DE9EFA535861849E2F;430.
-Package logreq Info: Writing requests to 'WBVFM_IntroPar.run.xml'.
-\openout1 = `WBVFM_IntroPar.run.xml'.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.263 
+       [15]pdfTeX warning (ext4): destination with the same identifier (name{pa
+ge.}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.264 \newpage
+               [16] <figure/WLocs-1.pdf, id=196, 433.62pt x 289.08pt>
+File: figure/WLocs-1.pdf Graphic file (type pdf)
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 318.
+<use figure/WLocs-1.pdf>
+Package pdftex.def Info: figure/WLocs-1.pdf used on input line 271.
+(pdftex.def)             Requested size: 345.0pt x 230.01158pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 271--272
+
+ []
+
+<pre_avg_NDVI_max_full.png, id=197, 450.68375pt x 366.36874pt>
+File: pre_avg_NDVI_max_full.png Graphic file (type png)
+
+<use pre_avg_NDVI_max_full.png>
+Package pdftex.def Info: pre_avg_NDVI_max_full.png used on input line 280.
+(pdftex.def)             Requested size: 155.24895pt x 126.20728pt.
+ <result_disag.png, id=198, 481.8pt x 481.8pt>
+File: result_disag.png Graphic file (type png)
+
+<use result_disag.png>
+Package pdftex.def Info: result_disag.png used on input line 288.
+(pdftex.def)             Requested size: 276.00105pt x 276.01096pt.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.295 \newpage
+               [17 <./figure/WLocs-1.pdf> <./pre_avg_NDVI_max_full.png>]pdfTeX 
+warning (ext4): destination with the same identifier (name{page.}) has been alr
+eady used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.295 \newpage
+               [18 <./result_disag.png (PNG copy)>]
+Underfull \hbox (badness 1742) in paragraph at lines 306--306
+[]\T1/aer/m/n/10 Gridded Pop-u-la-tion of the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--320
+[]\T1/aer/m/n/10 Ecofloristic Zone Car-bon
+ []
+
+
+Overfull \hbox (8.20668pt too wide) in paragraph at lines 298--323
+[][] 
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 332.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.332 \end{document}
+                     [19
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 332.
+ (./Full_ERL_Sub.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 332.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 332.
+Package rerunfilecheck Info: File `Full_ERL_Sub.out' has not changed.
+(rerunfilecheck)             Checksum: 9D6E0780F0827A998B206E6BC3FE03CD;498.
+Package logreq Info: Writing requests to 'Full_ERL_Sub.run.xml'.
+\openout1 = `Full_ERL_Sub.run.xml'.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 332.
  ) 
 Here is how much of TeX's memory you used:
- 11746 strings out of 494985
- 185893 string characters out of 6180357
- 374741 words of memory out of 5000000
- 14716 multiletter control sequences out of 15000+600000
+ 11754 strings out of 494985
+ 186077 string characters out of 6180357
+ 371565 words of memory out of 5000000
+ 14734 multiletter control sequences out of 15000+600000
  37131 words of font info for 72 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 37i,16n,54p,918b,1154s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on WBVFM_IntroPar.pdf (14 pages, 1810331 bytes).
+ 37i,16n,54p,916b,1153s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Hfootnote.10} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.9} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.8} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.7} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
+, replaced by a fixed one
+
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on Full_ERL_Sub.pdf (19 pages, 1986632 bytes).
 PDF statistics:
- 312 PDF objects out of 1000 (max. 8388607)
- 270 compressed objects within 3 object streams
- 58 named destinations out of 1000 (max. 500000)
- 80 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 298 PDF objects out of 1000 (max. 8388607)
+ 252 compressed objects within 3 object streams
+ 44 named destinations out of 1000 (max. 500000)
+ 88 words of extra memory for PDF output out of 10000 (max. 10000000)
 

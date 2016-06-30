@@ -44,11 +44,11 @@
   <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>WBVFM_IntroPar.aux</file>
-      <file>WBVFM_IntroPar-blx.bib</file>
+      <file>Full_noAcknowledge.aux</file>
+      <file>Full_noAcknowledge-blx.bib</file>
     </provides>
     <requires type="dynamic">
-      <file>WBVFM_IntroPar.bbl</file>
+      <file>Full_noAcknowledge.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-compat.def</file>
@@ -65,20 +65,20 @@
     <cmdline>
       <binary>bibtex</binary>
       <option>-min-crossrefs 2</option>
-      <infile>WBVFM_IntroPar</infile>
+      <infile>Full_noAcknowledge</infile>
     </cmdline>
     <input>
-      <file>WBVFM_IntroPar.aux</file>
+      <file>Full_noAcknowledge.aux</file>
     </input>
     <output>
-      <file>WBVFM_IntroPar.bbl</file>
+      <file>Full_noAcknowledge.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>WBVFM_IntroPar.bbl</file>
+      <file>Full_noAcknowledge.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>WBVFM_IntroPar.aux</file>
-      <file>WBVFM_IntroPar-blx.bib</file>
+      <file>Full_noAcknowledge.aux</file>
+      <file>Full_noAcknowledge-blx.bib</file>
     </requires>
     <requires type="editable">
       <file>WBVFM_IntroPar.bib</file>

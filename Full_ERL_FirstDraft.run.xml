@@ -44,11 +44,11 @@
   <internal package="biblatex" priority="9" active="0">
     <generic>latex</generic>
     <provides type="dynamic">
-      <file>WBVFM_IntroPar.aux</file>
-      <file>WBVFM_IntroPar-blx.bib</file>
+      <file>Full_ERL_FirstDraft.aux</file>
+      <file>Full_ERL_FirstDraft-blx.bib</file>
     </provides>
     <requires type="dynamic">
-      <file>WBVFM_IntroPar.bbl</file>
+      <file>Full_ERL_FirstDraft.bbl</file>
     </requires>
     <requires type="static">
       <file>blx-compat.def</file>
@@ -65,20 +65,20 @@
     <cmdline>
       <binary>bibtex</binary>
       <option>-min-crossrefs 2</option>
-      <infile>WBVFM_IntroPar</infile>
+      <infile>Full_ERL_FirstDraft</infile>
     </cmdline>
     <input>
-      <file>WBVFM_IntroPar.aux</file>
+      <file>Full_ERL_FirstDraft.aux</file>
     </input>
     <output>
-      <file>WBVFM_IntroPar.bbl</file>
+      <file>Full_ERL_FirstDraft.bbl</file>
     </output>
     <provides type="dynamic">
-      <file>WBVFM_IntroPar.bbl</file>
+      <file>Full_ERL_FirstDraft.bbl</file>
     </provides>
     <requires type="dynamic">
-      <file>WBVFM_IntroPar.aux</file>
-      <file>WBVFM_IntroPar-blx.bib</file>
+      <file>Full_ERL_FirstDraft.aux</file>
+      <file>Full_ERL_FirstDraft-blx.bib</file>
     </requires>
     <requires type="editable">
       <file>WBVFM_IntroPar.bib</file>

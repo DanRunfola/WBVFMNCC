@@ -20,27 +20,6 @@
 \makeatother
 
 
-
-\author[1]{Daniel Runfola\thanks{dsmillerrunfol@wm.edu}}
-\author[1]{Ariel BenYishay\thanks{abenyishay@wm.edu}}
-\author[2]{Jeff Tanner\thanks{jtanner@worldbank.org}}
-\author[3]{Graeme Buchanan\thanks{graeme.buchanan@rspb.org.uk}}
-\author[4]{Jyothy Nagol\thanks{jnagol@umd.edu}}
-\author[5]{Matthias Leu\thanks{mleu@wm.edu}}
-\author[1]{Seth Goodman \thanks{smgoodman@wm.edu}}
-\author[1]{Rachel Trichler\thanks{rbtrichler@wm.edu}}
-\author[1]{Rob Marty\thanks{ramarty@email.wm.edu}}
-
-\affil[1]{Institute for the Theory and Practice of International Relations, The College of William and Mary}
-\affil[2]{Independent Evaluation Group, World Bank}
-\affil[3]{Center for Conservation Science, Royal Society of Birds}
-\affil[4]{Global Land Cover Facility, University of Maryland}
-\affil[5]{Department of Biology, The College of William and Mary}
-
-\renewcommand\Authands{ and }
-
-\title{A top-down approach to estimating spatially heterogeneous impacts of development aid on vegetative carbon sequestration}
-\date{\vspace{-5ex}}
 \begin{document}
 \begin{knitrout}
 
@@ -52,48 +31,13 @@ render_sweave()
 source("WBVFM_Analysis.R")
 @
 
-\maketitle 
-\begin{flushleft}
-\textbf{Short Title}: Estimating impacts of aid on carbon sequestration\\
-\textbf{Keywords}: International Aid, Carbon Sequestration, Causal Identification, Heterogeneous Effects\\
-\textbf{Words in Abstract:} 143\\
-\textbf{Words in Manuscript:} 2,580\\
-\textbf{Number of References:} 14\\
-\textbf{Number of Figures and Tables:} 4\\
-\textbf{Corresponding Author}:\\
-Dr. Daniel Runfola\\
-Institute for the Theory and Practice of International Relations, \emph{AidData}
-Email: dsmillerrunfol@wm.edu
-Telephone: 508.316.9109
-Fax: 757.221.4650
-\end{flushleft}
-
-\newpage
-\section{Abstract}
-
-Since 1945, over \$4.9 trillion dollars of international aid has been allocated (\cite{tierney_more_2011}).
-To date there have been no estimates of the regional impact of this aid on the carbon cycle.  
-We apply a geographically explicit matching method (\cite{andam_measuring_2008}) to estimate the relative impact of large scale World Bank projects implemented between 2000 and 2010 on sequestered carbon, using a novel and publicly available data set of \Sexpr{proj_count} World Bank project locations. 
-Considering only carbon sequestered due to fluctuations in vegetative biomass caused by World Bank projects, we illustrate the relative impact of World Bank projects on carbon sequestration across  development sectors.
-We use this information to illustrate the geographic variation in apparent effectiveness of environmental safeguards (\cite{laurance_reducing_2015}) implemented by the World Bank.
-We argue that sub-national data can help identify geographically heterogeneous impact effects, and highlight the methodologic barriers which still exist.
-
-\newpage
 \section{Introduction}
 
 Global recognition of the dual challenges of international development and the mitigation of environmental change is resulting in a large redirection of resources towards developing countries. 
 The United States alone has pledged nearly \$4 billion dollars of aid to mitigate climate vulnerability over the next 4 years, and the Paris convention urged donors to target \$100 billion annually by the year 2020 (\cite{royal_united_2015}). 
 Coupled with increasing pressure from recipient nations, donors have and continue to introduce more stringent environmental safeguards on development projects of all types, including requirements for compliance with national and international regulations, environmental management plans, reforestation goals, and others (\cite{nielson_delegation_2003}, \cite{gutner_explaining_2005}).
 
-\begin{wrapfigure}[17]{r}{0.65\textwidth}\centering
-<<WLocs, echo=FALSE, fig.width=3, fig.height=2>>=
-map("world", fill=TRUE, col="white", bg="white", ylim=c(-60, 90), mar=c(0,0,0,0))
-points(coordinates(uni_spdf_map), col="red", pch=20, cex=0.05)
-@
-\caption{World Bank IDA and IBRD Project Locations.}
-\label{WBLocs}
-\vspace{25pt}
-\end{wrapfigure}  
+
 
 \par
 
@@ -132,6 +76,15 @@ Ecofloristic Zone Carbon Fractions & Oak Ridge National Laboratory (\cite{ruesch
 \end{table}
 
 \par
+\begin{figure}
+<<WLocs, echo=FALSE, fig.width=6, fig.height=3>>=
+map("world", fill=TRUE, col="white", bg="white", ylim=c(-60, 90), mar=c(0,0,0,0))
+points(coordinates(uni_spdf_map), col="red", pch=20, cex=0.05)
+@
+\caption{World Bank IDA and IBRD Project Locations.}
+\label{WBLocs}
+\vspace{25pt}
+\end{figure}  
 
 We find that while the overall impact of large scale World Bank projects on carbon sequestration appears to be positive, considerable temporal and spatial variation exists in these impacts.
 We illustrate the advantages and limitations of a geographically explicit approach to estimating the causal effects of development aid projects, and outline a number of topics for further research.
@@ -228,12 +181,12 @@ The ecofloristic zone that each World Bank project exists in is then identified 
 \newpage
 \section{Results}
 
-\begin{wrapfigure}{l}{0.5\textwidth}
+\begin{figure}{l}
 \centering
  \includegraphics[width=0.45\textwidth]{pre_avg_NDVI_max_full}
 \caption{Distance decay of NDVI values in 1999.}
   \label{DDFig}
-\end{wrapfigure}
+\end{figure}
 
 First, we use the Moran's I measurements (eq. \ref{EQmoran}) to select a buffer radius to use in the estimation of each individual location.
 As Figure \ref{DDFig} illustrates, the distance-decay function of NDVI in 1999 follows an expected pattern, with spatial autocorrelation dropping off as distances increase.  
@@ -243,14 +196,14 @@ For each unit of analysis we then draw a subpopulation of all locations which fa
 For each of these subpopulations, we match control and treatment cases on the basis of the propensity scores estimated in eq.\ref{EQpropensity}, following a nearest-neighbor matching strategy.  
 A caliper of .25 is used to exclude poor matches, and after matching if a sufficient total of matches does not exist (less than 30 total matches), the unit is excluded from analysis and we move to the next subpopulation. 
 \par
-\begin{wrapfigure}[21]{r}{0.75\textwidth}\centering
+\begin{figure}
 <<Fig1, echo=FALSE, fig.height=4.7, fig.width=6>>=
 grid.arrange(Total_Proj, Count_Proj, Avg_Proj, ncol=2, layout_matrix = cbind(c(1,1),c(2,3)))
 @
 \caption{Results from estimates by region and time.}
 \label{result_fig}
 \vspace{10pt}
-\end{wrapfigure}  
+\end{figure}  
 After matching is conducted for each subpopulation, a regression is performed for that subpopulation following eq.\ref{EQgwr}.  
 This results in \Sexpr{proj_est_count_high} locations which have adequate matches for estimation, or \Sexpr{round(proj_est_count_high/as.numeric(proj_est_count),2)*100}\% of all large scale projects' locations. 
 For each of these models, we record all relevant information regarding standard errors and estimated coefficients\footnote{An online webmap was created to illustrate results to readers, but is omitted from this submission to facilitate blind peer review.}.  
@@ -290,12 +243,6 @@ Following this, we argue that sub-national data can be helpful in the identifica
 This piece highlights this by examining the impact of large scale World Bank projects on carbon sequestration at a global scale, using a novel and publicly available data set of World Bank project locations\begin{math}^{1}\end{math}.  
 We find that while these projects appear to have an overall positive effect, significant temporal and geographic variation exists which would be masked if single, aggregate estimates were examined.
 Finally, we argue for the importance of further research into methods to estimate geographically heterogeneous impacts effects.
-\newpage
-
-\section{Acknowledgements}
-The authors would like to acknowledge the government of Sweden and the World Bank Independent Evaluation Group for partially funding this research.  
-This work was performed in part using computational facilities at the College of William and Mary which were provided with the assistance of the National Science Foundation, Virginia Port Authority, Virginia's Commonwealth Technology Research Fund, and the Office of Naval Research.  
-The authors would also like to thank Scott Stewart, Alex Kappel, Zhonghui Lv, Doug Nicholson, Carrie Dolan, and Vinay Vijayan for their valuable contributions and insights.
 
 \newpage
 %Need to ensure formatting is correct -

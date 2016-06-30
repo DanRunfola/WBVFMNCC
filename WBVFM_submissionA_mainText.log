@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.3)  26 APR 2016 12:39
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2016.3.3)  26 APR 2016 15:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**WBVFM_IntroPar.tex
-(./WBVFM_IntroPar.tex
+**WBVFM_submissionA_mainText.tex
+(./WBVFM_submissionA_mainText.tex
 LaTeX2e <2011/06/27>
 Babel <3.9h> and hyphenation patterns for 4 languages loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -545,29 +545,31 @@ File: english.lbx 2013/11/25 v2.8a biblatex localization (PK/JW/AB)
 \@quotelevel=\count225
 \@quotereset=\count226
 
-(./WBVFM_IntroPar.aux)
-\openout1 = `WBVFM_IntroPar.aux'.
+(./WBVFM_submissionA_mainText.aux)
+\openout1 = `WBVFM_submissionA_mainText.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 60.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 60.
- (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 37.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 37.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count227
@@ -597,7 +599,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box31
-Package hyperref Info: Link coloring OFF on input line 60.
+Package hyperref Info: Link coloring OFF on input line 37.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -607,166 +609,120 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count233
 )
-LaTeX Info: Redefining \ref on input line 60.
-LaTeX Info: Redefining \pageref on input line 60.
-LaTeX Info: Redefining \nameref on input line 60.
+LaTeX Info: Redefining \ref on input line 37.
+LaTeX Info: Redefining \pageref on input line 37.
+LaTeX Info: Redefining \nameref on input line 37.
 
-(./WBVFM_IntroPar.out) (./WBVFM_IntroPar.out)
+(./WBVFM_submissionA_mainText.out) (./WBVFM_submissionA_mainText.out)
 \@outlinefile=\write5
-\openout5 = `WBVFM_IntroPar.out'.
+\openout5 = `WBVFM_submissionA_mainText.out'.
 
 Package biblatex Info: No input encoding detected.
 (biblatex)             Assuming 'ascii'.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'ascii'.
-\openout4 = `WBVFM_IntroPar-blx.bib'.
+\openout4 = `WBVFM_submissionA_mainText-blx.bib'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'WBVFM_IntroPar.bbl' found.
- (./WBVFM_IntroPar.bbl)
-Package biblatex Info: Reference section=0 on input line 60.
-Package biblatex Info: Reference segment=0 on input line 60.
+Package biblatex Info: ... file 'WBVFM_submissionA_mainText.bbl' found.
+
+(./WBVFM_submissionA_mainText.bbl)
+Package biblatex Info: Reference section=0 on input line 37.
+Package biblatex Info: Reference segment=0 on input line 37.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 65.
+(Font)              <7> on input line 54.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 65.
+(Font)              <5> on input line 54.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 65.
+(Font)              <8> on input line 54.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 65.
- [1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2]
-<figure/WLocs-1.pdf, id=63, 216.81pt x 144.54pt>
-File: figure/WLocs-1.pdf Graphic file (type pdf)
- <use figure/WLocs-1.pdf>
-Package pdftex.def Info: figure/WLocs-1.pdf used on input line 101.
-(pdftex.def)             Requested size: 216.80946pt x 144.54623pt.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 111.
-
-Underfull \hbox (badness 3690) in paragraph at lines 109--112
-[][]\T1/aer/m/n/10 Despite these shifts
- []
-
-
-Underfull \hbox (badness 1803) in paragraph at lines 109--112
-\T1/aer/m/n/10 ex-am-ine the im-pact of
- []
-
-
-Underfull \hbox (badness 7203) in paragraph at lines 109--112
-\T1/aer/m/n/10 projects on veg-e-ta-tion
- []
-
-LaTeX Font Info:    Try loading font information for T1+aett on input line 117.
+(Font)              <6> on input line 54.
+LaTeX Font Info:    Try loading font information for T1+aett on input line 60.
 
 (/usr/share/texlive/texmf-dist/tex/latex/ae/t1aett.fd
 File: t1aett.fd 1997/11/16 Font definitions for T1/aett.
 )
-Underfull \hbox (badness 1742) in paragraph at lines 123--123
+Underfull \hbox (badness 1742) in paragraph at lines 66--66
 []\T1/aer/m/n/10 Gridded Pop-u-la-tion of the
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 137--137
+Underfull \hbox (badness 10000) in paragraph at lines 80--80
 []\T1/aer/m/n/10 Ecofloristic Zone Car-bon
  []
 
 
-Overfull \hbox (8.20668pt too wide) in paragraph at lines 115--140
+Overfull \hbox (8.20668pt too wide) in paragraph at lines 58--83
 [][] 
  []
 
-[3 <./figure/WLocs-1.pdf>] [4] [5] [6] [7]
-<pre_avg_NDVI_max_full.png, id=143, 450.68375pt x 366.36874pt>
+<figure/WLocs-1.pdf, id=44, 433.62pt x 216.81pt>
+File: figure/WLocs-1.pdf Graphic file (type pdf)
+ <use figure/WLocs-1.pdf>
+Package pdftex.def Info: figure/WLocs-1.pdf used on input line 90.
+(pdftex.def)             Requested size: 345.0pt x 172.50868pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 90--91
+
+ []
+
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+] [2 <./figure/WLocs-1.pdf>] [3] [4] [5] <pre_avg_NDVI_max_full.png, id=117, 45
+0.68375pt x 366.36874pt>
 File: pre_avg_NDVI_max_full.png Graphic file (type png)
 
 <use pre_avg_NDVI_max_full.png>
-Package pdftex.def Info: pre_avg_NDVI_max_full.png used on input line 242.
+Package pdftex.def Info: pre_avg_NDVI_max_full.png used on input line 193.
 (pdftex.def)             Requested size: 155.24895pt x 126.20728pt.
+ <result_disag.png, id=121, 481.8pt x 481.8pt>
+File: result_disag.png Graphic file (type png)
 
-<figure/Fig1-1.pdf, id=147, 433.62pt x 339.2675pt>
-File: figure/Fig1-1.pdf Graphic file (type pdf)
- <use figure/Fig1-1.pdf>
-Package pdftex.def Info: figure/Fig1-1.pdf used on input line 258.
-(pdftex.def)             Requested size: 258.75pt x 202.4594pt.
-
-Underfull \hbox (badness 2538) in paragraph at lines 263--269
-[][]\T1/aer/m/n/10 After match-
- []
-
-
-Overfull \hbox (3.981pt too wide) in paragraph at lines 263--269
-\T1/aer/m/n/10 es-ti-ma-tion, or 47%
- []
-
-
-Overfull \hbox (4.88852pt too wide) in paragraph at lines 263--269
-\T1/aer/m/n/10 projects' lo-ca-tions.
- []
-
-
-Overfull \hbox (0.12103pt too wide) in paragraph at lines 263--269
-\T1/aer/m/n/10 mod-els, we record
- []
-
-
-Underfull \hbox (badness 5939) in paragraph at lines 263--269
-\T1/aer/m/n/10 all rel-e-vant in-
- []
-
-
-Overfull \hbox (3.2789pt too wide) in paragraph at lines 263--269
-\T1/aer/m/n/10 rors and es-ti-mated
- []
-
-
-Overfull \hbox (3.49481pt too wide) in paragraph at lines 263--269
-\T1/aer/m/n/10 co-ef-fi-cients[][][]. The
- []
-
-[8 <./pre_avg_NDVI_max_full.png> <./figure/Fig1-1.pdf>] [9] [10] [11] [12]
-Overfull \hbox (12.4658pt too wide) in paragraph at lines 314--314
+<use result_disag.png>
+Package pdftex.def Info: result_disag.png used on input line 208.
+(pdftex.def)             Requested size: 276.00105pt x 276.01096pt.
+ [6 <./pre_avg_NDVI_max_full.png>] [7 <./result_disag.png (PNG copy)>] [8] [9]
+Overfull \hbox (12.4658pt too wide) in paragraph at lines 258--258
 \T1/aer/m/n/10 net-works in re-duc-ing de-for-esta-tion''. en. In: \T1/aer/m/it
 /10 Pro-ceed-ings of the Na-tional Academy
  []
 
 
-Overfull \hbox (1.19096pt too wide) in paragraph at lines 314--314
+Overfull \hbox (1.19096pt too wide) in paragraph at lines 258--258
 \T1/aett/m/n/10 1526380054127727$[]\T1/aer/m/n/10 . \T1/aer/m/sc/10 url\T1/aer/
 m/n/10 : []$\T1/aett/m/n/10 http : / / dx . doi . org / 10 . 1162 / 15263800541
 27727$[]
  []
 
 
-Overfull \hbox (8.40942pt too wide) in paragraph at lines 314--314
+Overfull \hbox (8.40942pt too wide) in paragraph at lines 258--258
 \T1/aer/m/it/10 Change ADOP-TION OF THE PARIS AGREE-MENT. \T1/aer/m/sc/10 url\T
 1/aer/m/n/10 : []$\T1/aett/m/n/10 https : / / unfccc .
  []
 
-[13]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 318.
- [14]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 318.
- (./WBVFM_IntroPar.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 318.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 318.
-Package rerunfilecheck Info: File `WBVFM_IntroPar.out' has not changed.
-(rerunfilecheck)             Checksum: 6E4D06FC99F744DE9EFA535861849E2F;430.
-Package logreq Info: Writing requests to 'WBVFM_IntroPar.run.xml'.
-\openout1 = `WBVFM_IntroPar.run.xml'.
+[10]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 262.
+ [11]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 262.
+ (./WBVFM_submissionA_mainText.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 262.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 262.
+Package rerunfilecheck Info: File `WBVFM_submissionA_mainText.out' has not chan
+ged.
+(rerunfilecheck)             Checksum: D78ADCCC40F8EA6CCABEEBAFBE6382C5;336.
+Package logreq Info: Writing requests to 'WBVFM_submissionA_mainText.run.xml'.
+\openout1 = `WBVFM_submissionA_mainText.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 318.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 262.
  ) 
 Here is how much of TeX's memory you used:
- 11746 strings out of 494985
- 185893 string characters out of 6180357
- 374741 words of memory out of 5000000
- 14716 multiletter control sequences out of 15000+600000
- 37131 words of font info for 72 fonts, out of 8000000 for 9000
+ 11712 strings out of 494985
+ 185839 string characters out of 6180357
+ 372155 words of memory out of 5000000
+ 14698 multiletter control sequences out of 15000+600000
+ 32197 words of font info for 60 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 37i,16n,54p,918b,1154s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,16n,54p,930b,1132s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/tex
@@ -774,19 +730,15 @@ live/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on WBVFM_IntroPar.pdf (14 pages, 1810331 bytes).
+1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on WBVFM_submissionA_mainText.pdf (11 pages, 1925852 bytes).
 PDF statistics:
- 312 PDF objects out of 1000 (max. 8388607)
- 270 compressed objects within 3 object streams
- 58 named destinations out of 1000 (max. 500000)
- 80 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 263 PDF objects out of 1000 (max. 8388607)
+ 229 compressed objects within 3 object streams
+ 53 named destinations out of 1000 (max. 500000)
+ 64 words of extra memory for PDF output out of 10000 (max. 10000000)
 
