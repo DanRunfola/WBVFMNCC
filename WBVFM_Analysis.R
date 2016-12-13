@@ -97,3 +97,8 @@ tonnes_sequestered <- formatC(sum(spdf_LL@data$val), format="d", big.mark=',')
 png('result_disag.png')
 grid.arrange(Total_Proj, Count_Proj, Avg_Proj, ncol=2, layout_matrix = cbind(c(1,1),c(2,3)))
 dev.off()
+
+png('WLocs.png', width=6*300, height=4*300)
+map("world", fill=TRUE, col="white", bg="white", ylim=c(-60, 90), mar=c(0,0,0,0))
+points(coordinates(uni_spdf_map), col="red", pch=20, cex=0.001)
+dev.off()
